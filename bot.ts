@@ -57,7 +57,7 @@ bot.on("loggedOn", () => {
     bot.setPersona(1);
     bot.gamesPlayed({
       "game_id": 760,
-      "game_extra_info": "Gay Club"
+      "game_extra_info": "Gay Club :)"
     })
 })
 
@@ -83,8 +83,10 @@ bot.on('friendRelationship', (steamid: any, relationship: any) => {
 
 bot.on('friendMessage', (steamid: any, message: string) => {
   console.log("New message from " + steamid.getSteam3RenderedID() + " | " + steamid + " : " + message)
-  if (steamid === '') {
-
+  if (steamid === '76561199168219627') {
+    if (message.toLowerCase() === "!help") {
+      bot.chat.sendFriendMessage(steamid, 'Hi gay! \n You have permanent discount for trading with me, enjoy :) \n And btw, no elp yet')
+    }
   }
   if (message.toLowerCase() === "!help") {
     bot.chat.sendFriendMessage(steamid, 'IDK, no elp yet :))))')
